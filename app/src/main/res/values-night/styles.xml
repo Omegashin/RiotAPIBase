@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="android:popupTheme" tools:targetApi="21">@style/ToolbarPopupTheme</item>
+    </style>
+
+    <style name="ToolbarPopupTheme" parent="Theme.AppCompat">
+        <item name="android:itemTextAppearance">@style/popupMenuTextColor</item>
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+    <style name="popupMenuTextColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>
