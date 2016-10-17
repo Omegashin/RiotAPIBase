@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RiotAPIBase</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="LogTag">LOL Log Tag</string>
+
+</resources>
