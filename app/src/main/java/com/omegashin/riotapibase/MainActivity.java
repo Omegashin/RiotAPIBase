@@ -1,6 +1,7 @@
 package com.omegashin.riotapibase;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,12 +11,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements getRequestCallback {
+public class MainActivity extends AppCompatActivity implements getRequestCallbacks {
 
     JsonHelper jsonHelper;
     TextView responseTextView;
+    ImageView visualView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +37,10 @@ public class MainActivity extends AppCompatActivity implements getRequestCallbac
         });
 
         responseTextView=(TextView) findViewById(R.id.response_textView);
+        visualView=(ImageView) findViewById(R.id.visual_imageView);
 
         jsonHelper= new JsonHelper(this ,getBaseContext());
-        jsonHelper.testRequest();
+        jsonHelper.getChampionVisual();
 
     }
 
@@ -64,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements getRequestCallbac
 
     public void showResponse(Context context, String response){
         responseTextView.setText(response);
-        Log.e(getString(R.string.LogTag), "showResponse: " );
+    }
+
+    public void returnVisual(Context context, Bitmap visual){
+        visualView.setImageBitmap(visual);
     }
 }
